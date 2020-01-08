@@ -1,0 +1,21 @@
+<%- include('header') %>
+<h2>Administrativo vagas:
+    <a href="/admin/vagas/criarVagas">
+        <button type="button" class="btn btn-primary btn-sm">Criar Vagas</button>
+    </a>
+    <a href="/admin">
+        <button type="button" class="btn btn-secondary btn-sm">Voltar</button>
+    </a>
+</h2>
+<div>
+    <ul>
+        <% vagas.forEach(vaga => { %>
+        <li>
+            <%- vaga.titulo %> |
+            <a href="/admin/vagas/delete/<%- vaga.id %>">Excluir</a> |
+            <a href="/admin/vagas/editarVagas/<%- vaga.id %>">Editar</a>
+        </li>
+        <% }) %>
+    </ul>
+</div>
+<%- include('footer') %>
