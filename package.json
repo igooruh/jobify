@@ -1,6 +1,9 @@
 {
   "name": "jobify",
   "version": "1.0.0",
+  "engines": {
+    "node": "12.14.1"
+  },
   "description": "Jobify is a simple job board for sites.",
   "main": "index.js",
   "scripts": {
