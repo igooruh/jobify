@@ -6,6 +6,9 @@ const path = require('path')
 const dbConnection = sqlite.open(path.resolve(__dirname, 'banco.sqlite'), { Promise })
 const port = process.env.PORT || 4000
 
+app.use('/admin', (req, res, next) => {
+    req.hostname === 'localhost' ? next() : res.send('Not allowed')
+})
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 // Caso não encontre a URL pega qualquer coisa na pasta pública
